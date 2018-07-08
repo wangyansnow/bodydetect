@@ -12,7 +12,11 @@
 		E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8D620EB719D0029D5D8 /* Main.storyboard */; };
 		E3B7D8DA20EB719E0029D5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8D920EB719E0029D5D8 /* Assets.xcassets */; };
 		E3B7D8DD20EB719E0029D5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8DB20EB719E0029D5D8 /* LaunchScreen.storyboard */; };
-		E3B7D8E020EB719E0029D5D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8DF20EB719E0029D5D8 /* main.m */; };
+		E3B7D8E020EB719E0029D5D8 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8DF20EB719E0029D5D8 /* main.mm */; };
+		E3B7D8E920EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8E720EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile */; };
+		E3B7D8EA20EB71C10029D5D8 /* facehandbody_c63a.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8E820EB71C10029D5D8 /* facehandbody_c63a.iml.mobile */; };
+		E3B7D8ED20EB71DE0029D5D8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7D8EC20EB71DE0029D5D8 /* Accelerate.framework */; };
+		E3B7D8EF20EB72020029D5D8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7D8EE20EB72020029D5D8 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +29,11 @@
 		E3B7D8D920EB719E0029D5D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3B7D8DC20EB719E0029D5D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B7D8DE20EB719E0029D5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3B7D8DF20EB719E0029D5D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3B7D8DF20EB719E0029D5D8 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		E3B7D8E720EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = humankeypoint_3efb.iml.mobile; sourceTree = "<group>"; };
+		E3B7D8E820EB71C10029D5D8 /* facehandbody_c63a.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = facehandbody_c63a.iml.mobile; sourceTree = "<group>"; };
+		E3B7D8EC20EB71DE0029D5D8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E3B7D8EE20EB72020029D5D8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B7D8EF20EB72020029D5D8 /* opencv2.framework in Frameworks */,
+				E3B7D8ED20EB71DE0029D5D8 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +54,7 @@
 			children = (
 				E3B7D8CF20EB719C0029D5D8 /* wyliehu */,
 				E3B7D8CE20EB719C0029D5D8 /* Products */,
+				E3B7D8EB20EB71DE0029D5D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,7 @@
 		E3B7D8CF20EB719C0029D5D8 /* wyliehu */ = {
 			isa = PBXGroup;
 			children = (
+				E3B7D8E620EB71C10029D5D8 /* models */,
 				E3B7D8D020EB719D0029D5D8 /* AppDelegate.h */,
 				E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */,
 				E3B7D8D320EB719D0029D5D8 /* ViewController.h */,
@@ -66,9 +78,27 @@
 				E3B7D8D920EB719E0029D5D8 /* Assets.xcassets */,
 				E3B7D8DB20EB719E0029D5D8 /* LaunchScreen.storyboard */,
 				E3B7D8DE20EB719E0029D5D8 /* Info.plist */,
-				E3B7D8DF20EB719E0029D5D8 /* main.m */,
+				E3B7D8DF20EB719E0029D5D8 /* main.mm */,
 			);
 			path = wyliehu;
+			sourceTree = "<group>";
+		};
+		E3B7D8E620EB71C10029D5D8 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7D8E720EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile */,
+				E3B7D8E820EB71C10029D5D8 /* facehandbody_c63a.iml.mobile */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E3B7D8EB20EB71DE0029D5D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7D8EE20EB72020029D5D8 /* opencv2.framework */,
+				E3B7D8EC20EB71DE0029D5D8 /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +158,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B7D8EA20EB71C10029D5D8 /* facehandbody_c63a.iml.mobile in Resources */,
 				E3B7D8DD20EB719E0029D5D8 /* LaunchScreen.storyboard in Resources */,
 				E3B7D8DA20EB719E0029D5D8 /* Assets.xcassets in Resources */,
+				E3B7D8E920EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile in Resources */,
 				E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7D8D520EB719D0029D5D8 /* ViewController.m in Sources */,
-				E3B7D8E020EB719E0029D5D8 /* main.m in Sources */,
+				E3B7D8E020EB719E0029D5D8 /* main.mm in Sources */,
 				E3B7D8D220EB719D0029D5D8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,10 +317,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K775G7S2W4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/opencv2.framework/",
+					"$(PROJECT_DIR)/include",
+				);
 				INFOPLIST_FILE = wyliehu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
+				OTHER_LDFLAGS = (
+					"-Wl,-force_load",
+					"$(PROJECT_DIR)/libs/libiml_score_ios_1618.a",
+					"-lnative-lib",
+					"-lz",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wy.wyliehu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,10 +350,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K775G7S2W4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/opencv2.framework/",
+					"$(PROJECT_DIR)/include",
+				);
 				INFOPLIST_FILE = wyliehu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
+				OTHER_LDFLAGS = (
+					"-Wl,-force_load",
+					"$(PROJECT_DIR)/libs/libiml_score_ios_1618.a",
+					"-lnative-lib",
+					"-lz",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wy.wyliehu;
 				PRODUCT_NAME = "$(TARGET_NAME)";

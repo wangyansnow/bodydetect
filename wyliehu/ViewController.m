@@ -7,22 +7,26 @@
 //
 
 #import "ViewController.h"
+#import "algo.h"
+
+#define DET_FREQUENCY 3
 
 @interface ViewController ()
 
+@property (nonatomic, weak) UIImageView *imageView;
+
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    AlgoHumanKeypoints *_humanKeyPoint;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSString* strRFCN = [[NSBundle mainBundle] pathForResource:@"facehandbody_c63a.iml" ofType:@"mobile"];
+    NSString* strPAF = [[NSBundle mainBundle] pathForResource:@"humankeypoint_3efb.iml" ofType:@"mobile"];
+    _humanKeyPoint = [[AlgoHumanKeypoints alloc] initWithModel:strRFCN openposeModel:strPAF frequency:DET_FREQUENCY];
 }
 
 
