@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		E39E01462698B38A00590820 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39E01452698B38900590820 /* opencv2.framework */; };
 		E39E014B2698B59000590820 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7D8EC20EB71DE0029D5D8 /* Accelerate.framework */; };
+		E39E01902698C06A00590820 /* WYOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = E39E01882698C06A00590820 /* WYOpenGLView.m */; };
+		E39E01912698C06A00590820 /* Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E01892698C06A00590820 /* Fragment.glsl */; };
+		E39E01922698C06A00590820 /* particle_Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E018A2698C06A00590820 /* particle_Vertex.glsl */; };
+		E39E01932698C06A00590820 /* WYVideoFx.m in Sources */ = {isa = PBXBuildFile; fileRef = E39E018B2698C06A00590820 /* WYVideoFx.m */; };
+		E39E01942698C06A00590820 /* Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E018C2698C06A00590820 /* Vertex.glsl */; };
+		E39E01952698C06A00590820 /* particle_Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E018D2698C06A00590820 /* particle_Fragment.glsl */; };
 		E3B7D8D220EB719D0029D5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */; };
 		E3B7D8D520EB719D0029D5D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8D420EB719D0029D5D8 /* ViewController.m */; };
 		E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8D620EB719D0029D5D8 /* Main.storyboard */; };
@@ -21,6 +27,14 @@
 
 /* Begin PBXFileReference section */
 		E39E01452698B38900590820 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../../../粒子动效分享/bodyDetect/opencv2.framework"; sourceTree = "<group>"; };
+		E39E01872698C06A00590820 /* WYVideoFx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYVideoFx.h; sourceTree = "<group>"; };
+		E39E01882698C06A00590820 /* WYOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYOpenGLView.m; sourceTree = "<group>"; };
+		E39E01892698C06A00590820 /* Fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
+		E39E018A2698C06A00590820 /* particle_Vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = particle_Vertex.glsl; sourceTree = "<group>"; };
+		E39E018B2698C06A00590820 /* WYVideoFx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYVideoFx.m; sourceTree = "<group>"; };
+		E39E018C2698C06A00590820 /* Vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
+		E39E018D2698C06A00590820 /* particle_Fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = particle_Fragment.glsl; sourceTree = "<group>"; };
+		E39E018E2698C06A00590820 /* WYOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOpenGLView.h; sourceTree = "<group>"; };
 		E3B7D8CD20EB719C0029D5D8 /* BodyDetect1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyDetect1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7D8D020EB719D0029D5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +63,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E39E01862698C06A00590820 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				E39E01872698C06A00590820 /* WYVideoFx.h */,
+				E39E01882698C06A00590820 /* WYOpenGLView.m */,
+				E39E01892698C06A00590820 /* Fragment.glsl */,
+				E39E018A2698C06A00590820 /* particle_Vertex.glsl */,
+				E39E018B2698C06A00590820 /* WYVideoFx.m */,
+				E39E018C2698C06A00590820 /* Vertex.glsl */,
+				E39E018D2698C06A00590820 /* particle_Fragment.glsl */,
+				E39E018E2698C06A00590820 /* WYOpenGLView.h */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		E3B7D8C420EB719C0029D5D8 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +98,7 @@
 		E3B7D8CF20EB719C0029D5D8 /* bodydetect */ = {
 			isa = PBXGroup;
 			children = (
+				E39E01862698C06A00590820 /* Shaders */,
 				E3B7D8E620EB71C10029D5D8 /* models */,
 				E3B7D8D020EB719D0029D5D8 /* AppDelegate.h */,
 				E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */,
@@ -159,10 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7D8EA20EB71C10029D5D8 /* facehandbody_c63a.iml.mobile in Resources */,
+				E39E01942698C06A00590820 /* Vertex.glsl in Resources */,
 				E3B7D8DD20EB719E0029D5D8 /* LaunchScreen.storyboard in Resources */,
 				E3B7D8DA20EB719E0029D5D8 /* Assets.xcassets in Resources */,
 				E3B7D8E920EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile in Resources */,
+				E39E01922698C06A00590820 /* particle_Vertex.glsl in Resources */,
+				E39E01952698C06A00590820 /* particle_Fragment.glsl in Resources */,
 				E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */,
+				E39E01912698C06A00590820 /* Fragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +208,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7D8D520EB719D0029D5D8 /* ViewController.m in Sources */,
+				E39E01932698C06A00590820 /* WYVideoFx.m in Sources */,
+				E39E01902698C06A00590820 /* WYOpenGLView.m in Sources */,
 				E3B7D8E020EB719E0029D5D8 /* main.mm in Sources */,
 				E3B7D8D220EB719D0029D5D8 /* AppDelegate.m in Sources */,
 			);
