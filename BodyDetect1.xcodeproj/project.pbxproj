@@ -15,14 +15,14 @@
 		E39E01932698C06A00590820 /* WYVideoFx.m in Sources */ = {isa = PBXBuildFile; fileRef = E39E018B2698C06A00590820 /* WYVideoFx.m */; };
 		E39E01942698C06A00590820 /* Vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E018C2698C06A00590820 /* Vertex.glsl */; };
 		E39E01952698C06A00590820 /* particle_Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E018D2698C06A00590820 /* particle_Fragment.glsl */; };
+		E39E01A0269954E100590820 /* facehandbody_b387.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E39E019E269954E100590820 /* facehandbody_b387.iml.mobile */; };
+		E39E01A1269954E100590820 /* humankeypoint_473d.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E39E019F269954E100590820 /* humankeypoint_473d.iml.mobile */; };
 		E3B7D8D220EB719D0029D5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */; };
 		E3B7D8D520EB719D0029D5D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8D420EB719D0029D5D8 /* ViewController.m */; };
 		E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8D620EB719D0029D5D8 /* Main.storyboard */; };
 		E3B7D8DA20EB719E0029D5D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8D920EB719E0029D5D8 /* Assets.xcassets */; };
 		E3B7D8DD20EB719E0029D5D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8DB20EB719E0029D5D8 /* LaunchScreen.storyboard */; };
 		E3B7D8E020EB719E0029D5D8 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8DF20EB719E0029D5D8 /* main.mm */; };
-		E3B7D8E920EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8E720EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile */; };
-		E3B7D8EA20EB71C10029D5D8 /* facehandbody_c63a.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8E820EB71C10029D5D8 /* facehandbody_c63a.iml.mobile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +35,8 @@
 		E39E018C2698C06A00590820 /* Vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
 		E39E018D2698C06A00590820 /* particle_Fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = particle_Fragment.glsl; sourceTree = "<group>"; };
 		E39E018E2698C06A00590820 /* WYOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOpenGLView.h; sourceTree = "<group>"; };
+		E39E019E269954E100590820 /* facehandbody_b387.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = facehandbody_b387.iml.mobile; sourceTree = "<group>"; };
+		E39E019F269954E100590820 /* humankeypoint_473d.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = humankeypoint_473d.iml.mobile; sourceTree = "<group>"; };
 		E3B7D8CD20EB719C0029D5D8 /* BodyDetect1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyDetect1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7D8D020EB719D0029D5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,8 +47,6 @@
 		E3B7D8DC20EB719E0029D5D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B7D8DE20EB719E0029D5D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3B7D8DF20EB719E0029D5D8 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		E3B7D8E720EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = humankeypoint_3efb.iml.mobile; sourceTree = "<group>"; };
-		E3B7D8E820EB71C10029D5D8 /* facehandbody_c63a.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = facehandbody_c63a.iml.mobile; sourceTree = "<group>"; };
 		E3B7D8EC20EB71DE0029D5D8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,14 +66,14 @@
 		E39E01862698C06A00590820 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				E39E01872698C06A00590820 /* WYVideoFx.h */,
-				E39E01882698C06A00590820 /* WYOpenGLView.m */,
+				E39E018C2698C06A00590820 /* Vertex.glsl */,
 				E39E01892698C06A00590820 /* Fragment.glsl */,
 				E39E018A2698C06A00590820 /* particle_Vertex.glsl */,
-				E39E018B2698C06A00590820 /* WYVideoFx.m */,
-				E39E018C2698C06A00590820 /* Vertex.glsl */,
 				E39E018D2698C06A00590820 /* particle_Fragment.glsl */,
 				E39E018E2698C06A00590820 /* WYOpenGLView.h */,
+				E39E01882698C06A00590820 /* WYOpenGLView.m */,
+				E39E01872698C06A00590820 /* WYVideoFx.h */,
+				E39E018B2698C06A00590820 /* WYVideoFx.m */,
 			);
 			path = Shaders;
 			sourceTree = "<group>";
@@ -116,8 +116,8 @@
 		E3B7D8E620EB71C10029D5D8 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				E3B7D8E720EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile */,
-				E3B7D8E820EB71C10029D5D8 /* facehandbody_c63a.iml.mobile */,
+				E39E019E269954E100590820 /* facehandbody_b387.iml.mobile */,
+				E39E019F269954E100590820 /* humankeypoint_473d.iml.mobile */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -188,13 +188,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B7D8EA20EB71C10029D5D8 /* facehandbody_c63a.iml.mobile in Resources */,
 				E39E01942698C06A00590820 /* Vertex.glsl in Resources */,
 				E3B7D8DD20EB719E0029D5D8 /* LaunchScreen.storyboard in Resources */,
 				E3B7D8DA20EB719E0029D5D8 /* Assets.xcassets in Resources */,
-				E3B7D8E920EB71C10029D5D8 /* humankeypoint_3efb.iml.mobile in Resources */,
+				E39E01A1269954E100590820 /* humankeypoint_473d.iml.mobile in Resources */,
 				E39E01922698C06A00590820 /* particle_Vertex.glsl in Resources */,
 				E39E01952698C06A00590820 /* particle_Fragment.glsl in Resources */,
+				E39E01A0269954E100590820 /* facehandbody_b387.iml.mobile in Resources */,
 				E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */,
 				E39E01912698C06A00590820 /* Fragment.glsl in Resources */,
 			);
@@ -370,7 +370,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
 				OTHER_LDFLAGS = (
 					"-Wl,-force_load",
-					"$(PROJECT_DIR)/libs/libiml_score_ios_1618.a",
+					"$(PROJECT_DIR)/libs/libiml_score_ios_eb3f.a",
 					"-lnative-lib",
 					"-lz",
 				);
@@ -403,7 +403,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs";
 				OTHER_LDFLAGS = (
 					"-Wl,-force_load",
-					"$(PROJECT_DIR)/libs/libiml_score_ios_1618.a",
+					"$(PROJECT_DIR)/libs/libiml_score_ios_eb3f.a",
 					"-lnative-lib",
 					"-lz",
 				);
