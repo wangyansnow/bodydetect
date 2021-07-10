@@ -87,7 +87,7 @@
     self.captureVideoDataOutput = [AVCaptureVideoDataOutput new];
     self.captureVideoDataOutput.alwaysDiscardsLateVideoFrames = NO;
     
-    self.captureVideoDataOutput.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)};
+    self.captureVideoDataOutput.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey: @(kCVPixelFormatType_32BGRA)};
     _videoQueue = dispatch_queue_create("video process", DISPATCH_QUEUE_SERIAL);
     [self.captureVideoDataOutput setSampleBufferDelegate:self queue:_videoQueue];
     
@@ -181,7 +181,7 @@
                 break;
         }
         
-        NSMutableArray* points = [_humanKeyPoint regress:baseAddress width:(int)iWidth height:(int)iHeight bytesPerRow:(int)iBytesPerRow rotation:rotationtype videoType:VideoType_YUV_NV12];
+        NSMutableArray* points = [_humanKeyPoint regress:baseAddress width:(int)iWidth height:(int)iHeight bytesPerRow:(int)iBytesPerRow rotation:rotationtype videoType:VideoType_BGRA];
         
         CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
     

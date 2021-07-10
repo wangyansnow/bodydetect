@@ -51,7 +51,7 @@ void main() {
             opacity = 0.5;
         }
         
-        gl_PointSize = 10.0;
+        gl_PointSize = 10.0 * opacity;
         
     } else {
         

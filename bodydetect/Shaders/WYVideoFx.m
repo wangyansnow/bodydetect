@@ -59,7 +59,7 @@ typedef struct {
 - (void)particleRender {
     
     if (!_isParticle && (CFAbsoluteTimeGetCurrent() - _endTime) > _lifeSpan) {
-        NSLog(@"早就结束了");
+//        NSLog(@"早就结束了");
         return;
     }
     
