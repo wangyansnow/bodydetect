@@ -149,15 +149,16 @@ static OutputPresent defaultOutPresent = OUTPUT_1080p;
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint point = [[touches anyObject] locationInView:self.view];
     NSLog(@"[Wing] point = %@", NSStringFromCGPoint(point));
-    self.glView.videoFx.touchePoint = point;
+    self.glView.videoFx.isParticle = YES;
+    self.glView.videoFx.leftHandPoint = point;
 }
 
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CGPoint point = [[touches anyObject] locationInView:self.view];
-    NSLog(@"[Wing] point = %@", NSStringFromCGPoint(point));
-    point = [self glPoint:point];
-    self.glView.videoFx.touchePoint = point;
-}
+//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    CGPoint point = [[touches anyObject] locationInView:self.view];
+//    NSLog(@"[Wing] point = %@", NSStringFromCGPoint(point));
+////    point = [self glPoint:point];
+//    self.glView.videoFx.leftHandPoint = point;
+//}
 
 - (CGPoint)glPoint:(CGPoint)point {
     CGFloat halfW = self.view.bounds.size.width * 0.5;
@@ -246,33 +247,15 @@ static OutputPresent defaultOutPresent = OUTPUT_1080p;
             CGFloat leftX = [points[4 * 2] floatValue];
             CGFloat leftY = [points[4 * 2 + 1] floatValue];
 
-    //        CGFloat rightX = [points[KEWLBodyPointRightHand * 2] floatValue];
-    //        CGFloat rightY = [points[KEWLBodyPointRightHand * 2 + 1] floatValue];
-    //        particleFilter.leftHandPoint = CGPointMake(leftX, leftY);
-    //        particleFilter.rightHandPoint = CGPointMake(rightX, rightY);
-            self.glView.videoFx.touchePoint = [self convertDanceOffPoint:CGPointMake(leftX, leftY)];
+            CGFloat rightX = [points[7 * 2] floatValue];
+            CGFloat rightY = [points[7 * 2 + 1] floatValue];
+            
+            self.glView.videoFx.leftHandPoint = CGPointMake(leftX, leftY);
+            self.glView.videoFx.rightHandPoint = CGPointMake(rightX, rightY);
         } else {
             self.glView.videoFx.isParticle = NO;
         }
 
-}
-
-- (CGPoint)convertDanceOffPoint:(CGPoint)point {
-    CGFloat x =  point.x;
-    CGFloat y =  point.y;
-    
-//    CGFloat halfW = SCREEN_WIDTH * 0.5;
-//    CGFloat halfH = SCREEN_HEIGHT * 0.5;
-    
-    CGFloat halfW = 720 * 0.5;
-    CGFloat halfH = 1280 * 0.5;
-    
-    CGFloat normalX = (x - halfW) / halfW;
-    CGFloat normalY = (halfH - y) / halfH;
-    
-    CGPoint glPoint = CGPointMake(normalX, normalY);
-    
-    return glPoint;
 }
 
 @end

@@ -12,11 +12,11 @@
 
 @interface WYVideoFx : NSObject
 
-@property (nonatomic, assign) CGFloat translateX;
-@property (nonatomic, assign) CGFloat translateY;
-
-@property (nonatomic, assign) CGPoint touchePoint;
+@property (nonatomic, assign) CGPoint leftHandPoint;
+@property (nonatomic, assign) CGPoint rightHandPoint;
 @property (nonatomic, assign) BOOL isParticle;
+
+@property (nonatomic, assign) BOOL isSingle; ///< 是否是单一颜色
 
 
 - (void)particleRender ;

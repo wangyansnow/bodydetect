@@ -17,6 +17,7 @@
 		E39E01952698C06A00590820 /* particle_Fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = E39E018D2698C06A00590820 /* particle_Fragment.glsl */; };
 		E39E01A0269954E100590820 /* facehandbody_b387.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E39E019E269954E100590820 /* facehandbody_b387.iml.mobile */; };
 		E39E01A1269954E100590820 /* humankeypoint_473d.iml.mobile in Resources */ = {isa = PBXBuildFile; fileRef = E39E019F269954E100590820 /* humankeypoint_473d.iml.mobile */; };
+		E39E01A32699627300590820 /* starparticle.png in Resources */ = {isa = PBXBuildFile; fileRef = E39E01A22699627300590820 /* starparticle.png */; };
 		E3B7D8D220EB719D0029D5D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */; };
 		E3B7D8D520EB719D0029D5D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7D8D420EB719D0029D5D8 /* ViewController.m */; };
 		E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B7D8D620EB719D0029D5D8 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		E39E018E2698C06A00590820 /* WYOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYOpenGLView.h; sourceTree = "<group>"; };
 		E39E019E269954E100590820 /* facehandbody_b387.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = facehandbody_b387.iml.mobile; sourceTree = "<group>"; };
 		E39E019F269954E100590820 /* humankeypoint_473d.iml.mobile */ = {isa = PBXFileReference; lastKnownFileType = file; path = humankeypoint_473d.iml.mobile; sourceTree = "<group>"; };
+		E39E01A22699627300590820 /* starparticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starparticle.png; sourceTree = "<group>"; };
 		E3B7D8CD20EB719C0029D5D8 /* BodyDetect1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyDetect1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B7D8D020EB719D0029D5D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E3B7D8D120EB719D0029D5D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		E3B7D8CF20EB719C0029D5D8 /* bodydetect */ = {
 			isa = PBXGroup;
 			children = (
+				E39E01A22699627300590820 /* starparticle.png */,
 				E39E01862698C06A00590820 /* Shaders */,
 				E3B7D8E620EB71C10029D5D8 /* models */,
 				E3B7D8D020EB719D0029D5D8 /* AppDelegate.h */,
@@ -197,6 +200,7 @@
 				E39E01A0269954E100590820 /* facehandbody_b387.iml.mobile in Resources */,
 				E3B7D8D820EB719D0029D5D8 /* Main.storyboard in Resources */,
 				E39E01912698C06A00590820 /* Fragment.glsl in Resources */,
+				E39E01A32699627300590820 /* starparticle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -97,8 +97,8 @@ const GLfloat wy_kColorConversion601FullRange[] = {
     }
     
     self.videoFx = [WYVideoFx new];
-    self.videoFx.isParticle = YES;
-    self.videoFx.touchePoint = CGPointMake(0.25, 0.25);
+//    self.videoFx.isParticle = YES;
+//    self.videoFx.touchePoint = CGPointMake(0.25, 0.25);
 }
 
 - (void)layoutSubviews {
