@@ -13,16 +13,6 @@
 
 #define DET_FREQUENCY 3
 
-typedef enum {
-    OUTPUT_240p = 0,
-    OUTPUT_288p = 1,
-    OUTPUT_480p = 2,
-    OUTPUT_540p = 3,
-    OUTPUT_720p = 4,
-    OUTPUT_1080p = 5,
-} OutputPresent;
-static OutputPresent defaultOutPresent = OUTPUT_1080p;
-
 @interface ViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
@@ -105,36 +95,9 @@ static OutputPresent defaultOutPresent = OUTPUT_1080p;
         [self.captureSession addOutput:self.captureVideoDataOutput];
     }
     
-    OutputPresent outPresent = OUTPUT_720p;
-    if(outPresent > OUTPUT_720p && AVCaptureDevicePositionFront == devicePosition) {
-        outPresent = OUTPUT_720p;
-    }
-    CGFloat imageWidth = 1080;
-    CGFloat imageHeight = 1920;
-    switch(outPresent)
-    {
-        case OUTPUT_480p:
-        {
-            self.captureSession.sessionPreset = AVCaptureSessionPreset640x480;
-            imageWidth = 480;
-            imageHeight = 640;
-            break;
-        }
-        case OUTPUT_720p:
-        {
-            self.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
-            imageWidth = 720;
-            imageHeight = 1280;
-            break;
-        }
-        case OUTPUT_1080p:
-        {
-            self.captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
-            imageWidth = 1080;
-            imageHeight = 1920;
-            break;
-        }
-    }
+    CGFloat imageWidth = 720;
+    CGFloat imageHeight = 1280;
+    self.captureSession.sessionPreset = AVCaptureSessionPreset1280x720;
     
     CGFloat previewWidth = self.glView.frame.size.width;
     CGFloat previewHeight = self.glView.frame.size.height;
@@ -259,7 +222,6 @@ static OutputPresent defaultOutPresent = OUTPUT_1080p;
         } else {
             self.glView.videoFx.isParticle = NO;
         }
-
 }
 
 @end
