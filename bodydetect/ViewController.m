@@ -244,14 +244,18 @@ static OutputPresent defaultOutPresent = OUTPUT_1080p;
         
         if (points.count > 0) {
             self.glView.videoFx.isParticle = YES;
-            CGFloat leftX = [points[4 * 2] floatValue];
-            CGFloat leftY = [points[4 * 2 + 1] floatValue];
+            CGFloat leftX = [points[8] floatValue];
+            CGFloat leftY = [points[9] floatValue];
 
-            CGFloat rightX = [points[7 * 2] floatValue];
-            CGFloat rightY = [points[7 * 2 + 1] floatValue];
+            CGFloat rightX = [points[14] floatValue];
+            CGFloat rightY = [points[15] floatValue];
             
-            self.glView.videoFx.leftHandPoint = CGPointMake(leftX, leftY);
-            self.glView.videoFx.rightHandPoint = CGPointMake(rightX, rightY);
+            if (leftX > 0 && leftY > 0) {
+                self.glView.videoFx.leftHandPoint = CGPointMake(leftX, leftY);
+            }
+            if (rightX > 0 && rightY > 0) {
+                self.glView.videoFx.rightHandPoint = CGPointMake(rightX, rightY);
+            }
         } else {
             self.glView.videoFx.isParticle = NO;
         }
