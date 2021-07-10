@@ -1,16 +1,24 @@
+varying mediump vec2 textureCoordinate;
+uniform sampler2D inputImageTexture;
+uniform sampler2D startTexture;
 
-varying mediump vec2 varyTexCoordinate;
 varying lowp float renderFlag;
 varying lowp vec4 outColor;
-
-uniform sampler2D colorMap;
-uniform sampler2D wyTexture;
+varying highp float elapsedTime;
+varying highp float life;
 
 void main() {
     
     if (renderFlag == 1.0) {
-        gl_FragColor = texture2D(colorMap, varyTexCoordinate);
+        if (elapsedTime > life) {
+            discard;
+        }
+        
+        gl_FragColor = outColor * texture2D(startTexture, gl_PointCoord);;
     } else {
-        gl_FragColor = outColor;
+        gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
     }
+    
 }
+
+
