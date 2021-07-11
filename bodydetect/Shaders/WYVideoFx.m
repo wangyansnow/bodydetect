@@ -12,11 +12,11 @@
 #import <OpenGLES/ES2/glext.h>
 
 typedef struct {
-    GLKVector2 wy_position;
-    GLKVector3 wy_color;
-    GLKVector2 wy_velocity;
-    GLfloat    wy_flag;
-    GLKVector2 wy_emissionTimeAndLife;
+    GLKVector2 wy_position; // 点的位置
+    GLKVector3 wy_color;    // 点的颜色
+    GLKVector2 wy_velocity; // 点在x和y方向上的移动速度
+    GLfloat    wy_flag;     // 标记是粒子特效的点
+    GLKVector2 wy_emissionTimeAndLife; // 粒子发射时间和存活时间
 }WYParticle;
 
 @implementation WYVideoFx {
@@ -302,14 +302,14 @@ typedef struct {
 }
 
 - (void)setLeftHandPoint:(CGPoint)leftHandPoint {
-    _leftHandPoint = [self convertDanceOffPoint:leftHandPoint];
+    _leftHandPoint = [self convertOpenGLPoint:leftHandPoint];
 }
 
 - (void)setRightHandPoint:(CGPoint)rightHandPoint {
-    _rightHandPoint = [self convertDanceOffPoint:rightHandPoint];
+    _rightHandPoint = [self convertOpenGLPoint:rightHandPoint];
 }
 
-- (CGPoint)convertDanceOffPoint:(CGPoint)point {
+- (CGPoint)convertOpenGLPoint:(CGPoint)point {
     CGFloat x =  point.x;
     CGFloat y =  point.y;
     

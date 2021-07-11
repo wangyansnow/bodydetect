@@ -26,27 +26,12 @@ void main() {
         
         vec2 deltaP = elapsedTime * velocity;
         vec2 wy_position = position + deltaP;
-        
-        lowp float deltaDistance = sqrt(deltaP.x * deltaP.x + deltaP.y * deltaP.y);
-        
+                
         gl_Position =  vec4(wy_position, 0.0, 1.0);
         lowp float opacity = max(((emissionTimeAndLife.y - elapsedTime) / emissionTimeAndLife.y), 0.0);
         
-        if (deltaDistance < 0.08) {
-            outColor = vec4(253.0/255.0, 122.0/255.0, 1.0, 1.0);
-        } else if (deltaDistance < 0.20) {
-            outColor = vec4(1.0, 160.0/255.0, 108.0/255.0, 1.0);
-        } else if (deltaDistance < 0.30) {
-            outColor = vec4(1.0, 66.0/255.0, 195.0/255.0, 1.0);
-        } else {
-            outColor = vec4(66.0/255.0, 1.0, 239.0/255.0, 1.0);
-        }
-        
-        if (opacity < 0.5) {
-            opacity = 0.5;
-        }
-        
-        gl_PointSize = 24.0 * opacity;
+        outColor = color;
+        gl_PointSize = 20.0 * opacity;
         
     } else {
         
@@ -54,5 +39,3 @@ void main() {
         
     }
 }
-
-

@@ -14,7 +14,7 @@ void main() {
             discard;
         }
         
-        gl_FragColor = outColor * texture2D(startTexture, gl_PointCoord);;
+        gl_FragColor = outColor;
     } else {
         gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
     }
