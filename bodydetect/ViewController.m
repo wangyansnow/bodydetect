@@ -22,6 +22,7 @@
 @property (nonatomic, weak) WYOpenGLView *glView;
 
 @property (nonatomic, weak) UIView *faceView;
+@property (nonatomic, assign) BOOL isTouch;
 
 
 @end
@@ -113,24 +114,28 @@
     CGPoint point = [[touches anyObject] locationInView:self.view];
     NSLog(@"[Wing] point = %@", NSStringFromCGPoint(point));
     self.glView.videoFx.isParticle = YES;
+    self.isTouch = YES;
+    point = [self glPoint:point];
     self.glView.videoFx.leftHandPoint = point;
 }
 
-//- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    CGPoint point = [[touches anyObject] locationInView:self.view];
-//    NSLog(@"[Wing] point = %@", NSStringFromCGPoint(point));
-////    point = [self glPoint:point];
-//    self.glView.videoFx.leftHandPoint = point;
-//}
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    CGPoint point = [[touches anyObject] locationInView:self.view];
+    NSLog(@"[Wing] point = %@", NSStringFromCGPoint(point));
+    point = [self glPoint:point];
+    self.glView.videoFx.leftHandPoint = point;
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.glView.videoFx.isParticle = NO;
+    self.isTouch = NO;
+}
 
 - (CGPoint)glPoint:(CGPoint)point {
-    CGFloat halfW = self.view.bounds.size.width * 0.5;
-    CGFloat halfH = self.view.bounds.size.height * 0.5;
     
-    CGFloat newX = (point.x - halfW) / halfW;
-    CGFloat newY = (halfH - point.y) / halfH;
-    
-    return CGPointMake(newX, newY);
+    CGFloat screenW = CGRectGetWidth([UIScreen mainScreen].bounds);
+    CGFloat screenH = CGRectGetHeight([UIScreen mainScreen].bounds);
+    return CGPointMake(point.x * (720 / screenW), point.y * (1280 / screenH));
 }
 
 - (void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
@@ -141,7 +146,7 @@
         [self.glView displayPixelBuffer:pixelBuffer];
         CFRelease(sampleBuffer);
     });
-    
+    if (self.isTouch) return;
     [self displaySampleBuffer:sampleBuffer];
 }
 
@@ -220,7 +225,9 @@
                 self.glView.videoFx.rightHandPoint = CGPointMake(rightX, rightY);
             }
         } else {
-            self.glView.videoFx.isParticle = NO;
+            if (!self.isTouch) {
+                self.glView.videoFx.isParticle = NO;
+            }
         }
 }
 
