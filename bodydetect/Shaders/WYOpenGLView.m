@@ -10,7 +10,6 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 #import <AVFoundation/AVUtilities.h>
-#import <GLKit/GLKit.h>
 
 
 // Color Conversion Constants (YUV to RGB) including adjustment from 16-235/16-240 (video range)
@@ -97,12 +96,9 @@ const GLfloat wy_kColorConversion601FullRange[] = {
     }
     
     self.videoFx = [WYVideoFx new];
-//    self.videoFx.isParticle = YES;
-//    self.videoFx.touchePoint = CGPointMake(0.25, 0.25);
 }
 
 - (void)layoutSubviews {
-//    [self setupEAGL];
     [self render];
 }
 
@@ -259,7 +255,7 @@ const GLfloat wy_kColorConversion601FullRange[] = {
     err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, _videoTextureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_LUMINANCE, frameWidth, frameHeight, GL_LUMINANCE, GL_UNSIGNED_BYTE, 0, &_lumaTexture);
     
     if (err) {
-        NSLog(@"Y - CVOpenGLESTextureCacheCreateTextureFromImage error:%d", err);
+        NSAssert(false, @"Y - CVOpenGLESTextureCacheCreateTextureFromImage error:%d", err);
         return;
     }
     
@@ -273,7 +269,7 @@ const GLfloat wy_kColorConversion601FullRange[] = {
     glActiveTexture(GL_TEXTURE1);
     err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, _videoTextureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_LUMINANCE_ALPHA, frameWidth * 0.5, frameHeight * 0.5, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, 1, &_chromaTexture);
     if (err) {
-        NSLog(@"UV - CVOpenGLESTextureCacheCreateTextureFromImage error:%d", err);
+        NSAssert(false, @"UV - CVOpenGLESTextureCacheCreateTextureFromImage error:%d", err);
         return;
     }
     
