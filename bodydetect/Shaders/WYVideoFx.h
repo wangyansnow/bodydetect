@@ -16,9 +16,6 @@
 @property (nonatomic, assign) CGPoint rightHandPoint;
 @property (nonatomic, assign) BOOL isParticle;
 
-@property (nonatomic, assign) BOOL isSingle; ///< 是否是单一颜色
-
-
 - (void)particleRender ;
 
 @end

@@ -31,8 +31,6 @@ typedef struct {
     GLuint _emissionTimeAndLifeSlot;
     GLuint _velocitySlot;
     
-    GLuint _wyTexture;
-    GLuint _wyTextureSlot;
     GLuint _modelviewMatrixSlot;
     GLKMatrix4 _modelviewMatrix;
     
@@ -52,14 +50,13 @@ typedef struct {
     
     NSMutableArray *_drawPoints;
     int _frames;
-    GLuint _singleSlot;
 }
 
 #pragma mark - 粒子效果
 - (void)particleRender {
     
     if (!_isParticle && (CFAbsoluteTimeGetCurrent() - _endTime) > _lifeSpan) {
-        NSLog(@"早就结束了");
+//        NSLog(@"早就结束了");
         return;
     }
     
@@ -129,7 +126,6 @@ typedef struct {
     glEnableVertexAttribArray(_velocitySlot);
     
     glUniform1fv(_currentTimeSlot, 1, &_elapsedTime);
-    glUniform1fv(_singleSlot, 1, &_isSingle);
     
     int count = (int)(_particleData.length / sizeof(WYParticle));
     glDrawArrays(GL_POINTS, 0, count);
@@ -163,32 +159,6 @@ typedef struct {
 }
 
 #pragma mark - Program
-- (void)loadTexture {
-    CGImageRef imgRef = [UIImage imageNamed:@"starparticle.png"].CGImage;
-    size_t width = CGImageGetWidth(imgRef);
-    size_t height = CGImageGetHeight(imgRef);
-    
-    GLbyte *data = malloc(sizeof(GLbyte) * width * height * 4);
-    CGColorSpaceRef colorSpace = CGImageGetColorSpace(imgRef);
-    
-    CGContextRef contextRef = CGBitmapContextCreate(data, width, height, 8, width * 4, colorSpace, kCGImageAlphaPremultipliedLast);
-    CGContextDrawImage(contextRef, CGRectMake(0, 0, width, height), imgRef);
-    CGContextRelease(contextRef);
-    
-    
-    glGenTextures(1, &_wyTexture);
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, _wyTexture);
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (int)width, (int)height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-    free(data);
-}
-
 - (BOOL)prepareShaderProgram {
     if (_program) return YES;
     
@@ -221,8 +191,7 @@ typedef struct {
     if (linkSucc == GL_FALSE) {
         GLchar msg[256];
         glGetProgramInfoLog(program, sizeof(msg), NULL, &msg[0]);
-        NSLog(@"link program: %d error: %s \n", program, msg);
-        exit(1);
+        NSAssert(false, @"link program: %d error: %s \n", program, msg);
     }
     
     glUseProgram(program);
@@ -235,16 +204,9 @@ typedef struct {
     _modelviewMatrix = GLKMatrix4MakeTranslation(0, 0, 0);
     _colorSlot = glGetAttribLocation(program, "color");
     _currentTimeSlot = glGetUniformLocation(program, "currentTime");
-    _singleSlot = glGetUniformLocation(program, "single");
     _emissionTimeAndLifeSlot = glGetAttribLocation(program, "emissionTimeAndLife");
     _velocitySlot = glGetAttribLocation(program, "velocity");
-    _wyTextureSlot = glGetUniformLocation(program, "startTexture");
-    
-    [self loadTexture];
-    
-    GLuint wyTextureSlot = glGetUniformLocation(program, "wyTexture");
     glUniform1i(_colorMapSlot, 0);
-    glUniform1i(wyTextureSlot, 1);
     
     _startTime = CFAbsoluteTimeGetCurrent();
     _particleData = [NSMutableData new];
@@ -266,8 +228,7 @@ typedef struct {
     if (compileSucc == GL_FALSE) {
         GLchar msg[256];
         glGetShaderInfoLog(shader, sizeof(msg), NULL, &msg[0]);
-        NSLog(@"compile shader: %@, error: %s \n", shaderName, msg);
-        exit(1);
+        NSAssert(false, @"compile shader: %@, error: %s \n", shaderName, msg);
     }
     
     return shader;
